@@ -1041,6 +1041,13 @@ class AdminImportControllerCore extends AdminController
 				foreach ($category_data as $tmp)
 					$product->category[] = $tmp;
 			}
+		        else
+			{
+				$category_data = array($info['category']);
+				foreach ($category_data as $tmp)
+					$product->category[] = $tmp;
+			}
+
 
 			AdminImportController::setEntityDefaultValues($product);
 			AdminImportController::arrayWalk($info, array('AdminImportController', 'fillInfo'), $product);
